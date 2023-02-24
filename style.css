@@ -22,6 +22,11 @@ body {
     padding: 10px;
     min-height: 100vh;
     background-color: var(--cg-body);
+
+    background-image: url('res/bg/background3.jpg');
+    background-position: center;
+    background-size: cover;
+
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -36,8 +41,8 @@ body .title {
     top: 0;
     font-family: Consolas;
 }
-body .logo {
-    display: none;
+.title .svg {
+    margin-top: 10px;
 }
 ::selection {
     color: violet;
@@ -59,8 +64,9 @@ body .logo {
     .total .wrapper {
         width: auto;
         height: 66.333px;
-        padding: 30px;
-        background-color: var(--cg-primary);
+        padding: 20px;
+        background-color: rgba(0,0,0,0.01);
+        backdrop-filter: blur(1px);
         border-radius: 15px;
         box-shadow: 0 20px 25px rgba(0,0,0,0.15);
         transition: background-color 0.50s ease;
@@ -107,8 +113,8 @@ body .logo {
         left: 0;
         opacity: 0;
         border-radius: 5px;
-        background: violet;
-        animation: blink 2s forwards infinite;
+        background: white;
+        animation: blink 1.5s forwards infinite;
     }
 
 @keyframes blink {
@@ -137,20 +143,20 @@ body .logo {
     width: 90px;
     height: auto;
     cursor: pointer;
+    z-index: 10;
     border-radius: 15px;
-    background: var(--cg-primary);
+    background-color: rgba(0,0,0,0.01);
+    backdrop-filter: blur(1px);
     transition: transform 0.15s ease, background-color 0.15s ease;
     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     text-align: center;
 }
 
 .stats button:hover {
-    background: var(--cg-secondary);
-    transform: scale(1.05);
+    transform: scale(1.07);
 }
 
     .stats button:active {
-        background: var(--cg-tertiary);
         transform: scale(0.95);
     }
 
@@ -249,7 +255,7 @@ li:not(:first-child) span {
     .typing-text p {
         font-size: 18px;
     }
-
+    
     .result-details li {
         margin-bottom: 10px;
     }
