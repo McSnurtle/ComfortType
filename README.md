@@ -2,8 +2,10 @@
 An aesthetic minimalistic, clean typing test.
 
 ## Theme
-In the future I plan on adding a themes menu on hover at the right of the screen, as well as a hotkey to cycle through themes.
-For now this inplementation is on the backburner until it is the last thing I need to work on ;)
+Using the theme button to access the themes menu, the following are available:
+ - Mountain (default)
+ - Forest
+ - Hike (favorite)
 
 ## Redo
 To redo the test (on a random new quote) press [ <kbd>Enter</kbd> ] or the redo button
