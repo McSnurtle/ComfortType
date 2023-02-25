@@ -1,6 +1,6 @@
 const typingText = document.querySelector(".typing-text p"),
     inpField = document.querySelector(".wrapper .input-field"),
-    tryAgainBtn = document.querySelector(".stats button"),
+    tryAgainBtn = document.querySelector(".stats .redo"),
     timeTag = document.querySelector(".time span b"),
     mistakeTag = document.querySelector(".error span b"),
     wpmTag = document.querySelector(".wpm span b"),
@@ -111,6 +111,18 @@ function resetGame() {
     cpmTag.innerText = 0;
 }
 
+// theme stuffs
+function showThemeCenter() {
+    document.getElementById('theme-center').classList.remove('hidden');
+    document.getElementById('command-center').classList.add('hidden');
+}
+
+function hideThemeCenter() {
+    document.getElementByClassName('theme-center').classList.add('hidden');
+    document.getElementByClassName('command-center').classList.remove('hidden');
+}
+
+// init
 console.log("Loaded!")
 loadParagraph();
 inpField.addEventListener("input", initTyping);

@@ -9,7 +9,40 @@
     --cg-primary: rgb(43, 46, 57);
     --cg-secondary: rgb(55, 59, 72);
     --cg-tertiary: rgb(37, 40, 50);
-    --cg-accent-1: none;
+    --cg-background-image: url('res/bg/background3.jpg');
+    --cg-accent-2: none;
+}
+:root.Mountain {
+    --cg-body: rgb(32, 34, 43);
+    --cg-text: rgb(255, 255, 255);
+    --cg-mistake: rgb(222, 43, 43);
+    --cg-correct: rgb(91, 232, 221);
+    --cg-primary: rgb(43, 46, 57);
+    --cg-secondary: rgb(55, 59, 72);
+    --cg-tertiary: rgb(37, 40, 50);
+    --cg-background-image: url('res/bg/background3.jpg');
+    --cg-accent-2: none;
+}
+:root.Forest {
+    --cg-body: rgb(32, 34, 43);
+    --cg-text: rgb(255, 255, 255);
+    --cg-mistake: rgb(222, 43, 43);
+    --cg-correct: rgb(91, 232, 221);
+    --cg-primary: rgb(43, 46, 57);
+    --cg-secondary: rgb(55, 59, 72);
+    --cg-tertiary: rgb(37, 40, 50);
+    --cg-background-image: url('res/bg/background8.jpg');
+    --cg-accent-2: none;
+}
+:root.Hike {
+    --cg-body: rgb(32, 34, 43);
+    --cg-text: rgb(255, 255, 255);
+    --cg-mistake: rgb(222, 43, 43);
+    --cg-correct: rgb(91, 232, 221);
+    --cg-primary: rgb(43, 46, 57);
+    --cg-secondary: rgb(55, 59, 72);
+    --cg-tertiary: rgb(37, 40, 50);
+    --cg-background-image: url('res/bg/background5.jpg');
     --cg-accent-2: none;
 }
 * {
@@ -22,8 +55,9 @@ body {
     padding: 10px;
     min-height: 100vh;
     background-color: var(--cg-body);
+    transition: background-color 1.5s ease, background-image 0.25s ease;
 
-    background-image: url('res/bg/background3.jpg');
+    background-image: var(--cg-background-image);
     background-position: center;
     background-size: cover;
 
@@ -40,9 +74,18 @@ body .title {
     left: 50%;
     top: 0;
     font-family: Consolas;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+.title:hover {
+    transform: scale(1.07);
+}
+.title .text {
+    text-decoration: none;
 }
 .title .svg {
-    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.15s ease
 }
 ::selection {
     color: violet;
@@ -56,10 +99,12 @@ body .title {
     min-height: 100vh;
 }
 .total {
+    display: revert;
     width: 720px;
     padding: 30px;
     margin: 20px;
     user-select: none;
+    transition: background-color 1.5s ease, background-image 0.25s ease, display 0.25s ease;
 }
     .total .wrapper {
         width: auto;
@@ -135,6 +180,7 @@ body .title {
 }
 
 .stats button {
+    display: block;
     float: right;
     font-family: 'Lexend Deca';
     outline: none;
@@ -166,6 +212,30 @@ body .title {
     flex-wrap: wrap;
     align-items: center;
     width: calc(100% - 140px);
+}
+
+.stats .menu {
+    float: right;
+    font-family: 'Lexend Deca';
+    outline: none;
+    border: none;
+    padding: 8px;
+    width: 90px;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.01);
+    backdrop-filter: blur(1px);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.stats .menu-buttons {
+    display: flex;
+    float: right;
+    align-items: center;
+    list-style: none;
 }
 
 .result-details li {
@@ -264,3 +334,89 @@ li:not(:first-child) span {
         margin-top: 10px;
     }
 }
+.typing-area .theme-center {
+    display: none;
+    padding: 15px;
+    align-items: center;
+    background-color: rgba(0,0,0,0.01);
+    backdrop-filter: blur(1px);
+    border-radius: 15px;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+    transition: background-color 1.5s ease, background-image 0.25s ease, display 0.25s ease;
+}
+.theme-center .themes-title {
+    font-weight: 500;
+    font-family: Lexend Deca;
+    font-size: 25px;
+    color: white;
+    padding: 10px 0px;
+}
+
+.theme-center .themes-switcher input {
+    display: none;
+}
+
+.theme-center .themes-switcher {
+    position: relative;
+    background-color: rgba(0,0,0,0.01);
+    backdrop-filter: blur(1px);
+    border-radius: 15px;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+    transition: background-color 0.50s ease;
+    font-family: 'Lexend Deca';
+    padding: 10px;
+    margin-bottom: 20px;
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.theme-center button {
+    display: block;
+    font-family: 'Lexend Deca';
+    outline: none;
+    border: none;
+    padding: 8px;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.01); 
+    backdrop-filter: blur(1px);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.theme-center button:hover {
+    transform: scale(1.07)
+}
+.theme-center button:active {
+    transform: scale(0.9)
+}
+
+    .theme-center .themes-switcher label > lavel {
+        position: relative;
+        z-index: 2;
+        width: calc(100% / 3);
+        color: var(--cg-text);
+    }
+
+    .theme-center .themes-switcher label span {
+        padding: 8px 0;
+        display: block;
+        justify-content: center;
+        font-weight: 300;
+        border-radius: 15px;
+        transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+        .theme-center .themes-switcher label span:hover {
+            cursor: pointer;
+            background: var(--c-bg-tertiary);
+            transform: scale(1.05);
+        }
+
+        .theme-center .themes-switcher label span:active {
+            transform: scale(0.90);
+        }
