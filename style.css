@@ -222,13 +222,6 @@ body .title {
     padding: 8px;
     width: 90px;
     height: auto;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 15px;
-    background-color: rgba(0,0,0,0.01);
-    backdrop-filter: blur(1px);
-    transition: transform 0.15s ease, background-color 0.15s ease;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     text-align: center;
 }
 .stats .menu-buttons {
